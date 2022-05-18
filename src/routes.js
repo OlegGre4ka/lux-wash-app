@@ -2,6 +2,8 @@ import {
     Routes,
     Route
 } from "react-router-dom";
+import React from "react";
+import Home from "./containers/Home";
 import AboutUs from "./containers/AboutUs";
 import Drivers from "./containers/Drivers";
 import Business from "./containers/Business";
@@ -11,11 +13,11 @@ import Contacts from "./containers/Contacts";
 
 const MainRoutes = () => {
     return (
-        <div>
+        <div style={{ flexGrow: 1}}>
             <Routes>
-                <Route path="/" element={<AboutUs />} />
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<AboutUs />} />
                 <Route path="/drivers" element={<Drivers />} />
-                <Route path="/business" element={<Business />} />
                 <Route path="/business" element={<Business />} />
                 <Route path="/technologies" element={<Technologies />} />
                 <Route path="/services" element={<Services />} />

@@ -1,14 +1,16 @@
-import './App.css';
+import React from "react";
+import { AppWrapper } from "./appStyled.js";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import MainRoutes from "./routes";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <Navbar/>
-      <MainRoutes/>
-    </div>
+    <AppWrapper>
+      <Navbar />
+      <MainRoutes />
+      <Footer />
+    </AppWrapper>
   );
 }
 
-export default App;
