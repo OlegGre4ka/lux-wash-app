@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Link } from "react-router-dom";
 
 const NavbarWrapper = styled.nav`
@@ -8,20 +8,35 @@ const NavbarWrapper = styled.nav`
  height: 90px;
  background-color: #090808;
 `
+const borderAnimation = keyframes`
+0% {
+  color: white; 
+  border-bottom-color: transparent;
+}
+100% {
+  color: #00b900;
+  border-bottom-color: #00b900;
+}
+`
 const MenuLink = styled(Link)`
  display: flex;
+ position: relative;
+ overflow: hidden;
  font-family: 'Roboto';
  font-size: 20px;
  font-weight: 400;
  color: ${props => props.isActive ? "#00b900" : "white"}; 
- text-decoration: ${props => props.isActive ? "underline" : "none"};
+ border-bottom: 2px solid  ${props => props.isActive ? "#00b900" : "transparent"};
+ text-decoration: none;
+ padding-bottom: 3px;
  margin-left: 80px;
  &:last-child {
      margin-right: 101px;
  }
  &:hover {
-     color: #00b900;
-     text-decoration: underline;
+     text-decoration: none;
+     padding-bottom: 3px;
+     animation:  ${props => !props.isActive && borderAnimation} .4s 1 linear forwards;
  }
 `
 

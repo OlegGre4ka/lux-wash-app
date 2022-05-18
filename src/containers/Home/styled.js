@@ -2,10 +2,9 @@ import styled from "styled-components";
 import MainCarImage from "./../../assets/MainCarImage.png";
 
 const TopContent = styled.div`
-  width: 100%;
   height: 700px;
   background-image: url(${MainCarImage});
-  opacity: 1.5;
+  background-size: 100% 700px;
 `
 const MessagesBlock = styled.div`
   display: flex;
