@@ -21,12 +21,11 @@ const borderAnimation = keyframes`
 const MenuLink = styled(Link)`
  display: flex;
  position: relative;
- overflow: hidden;
  font-family: 'Roboto';
  font-size: 20px;
  font-weight: 400;
  color: ${props => props.isActive ? "#00b900" : "white"}; 
- border-bottom: 2px solid  ${props => props.isActive ? "#00b900" : "transparent"};
+ border-bottom: ${props => props.isBorderBottom ? "none" : `2px solid  ${props.isActive ? "#00b900" : "transparent"}`};
  text-decoration: none;
  padding-bottom: 3px;
  margin-left: 80px;

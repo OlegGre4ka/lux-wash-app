@@ -7,7 +7,7 @@ export default function Navbar() {
     const { pathname }=useLocation();
     return (
         <NavbarWrapper>
-            <MenuLink to="/"><img src={LogoNavBar} width="80" height="80" alt="LogoNavBar" /></MenuLink>
+            <MenuLink to="/" isBorderBottom={true}><img src={LogoNavBar} width="80" height="80" alt="LogoNavBar" /></MenuLink>
             <MenuLinksBlock>
                 <MenuLink to="/about" isActive={pathname === "/about"}>Про нас</MenuLink>
 
