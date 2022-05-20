@@ -3,7 +3,8 @@ import MainCarImage from "./../../assets/MainCarImage.png";
 
 const TopContent = styled.div`
   height: 700px;
-  background-image: url(${MainCarImage});
+  background-blend-mode: multiply;
+  background-image: url(${MainCarImage}), linear-gradient(180deg, rgba(6,6,6,0.64) 56.36%, rgba(6,6,6,0.334414) 69.82%, rgba(6,6,6,0) 100%);
   background-size: 100% 700px;
 `
 const MessagesBlock = styled.div`
@@ -13,12 +14,4 @@ const MessagesBlock = styled.div`
   margin-left: 50px;
   padding-top: 169px;
 `
-// const Text = styled.span`
-//   font-family: 'Montserrat Alternates';
-//   color: ${props => props.color ? props.color : "#E1FCB7"}; 
-//   font-size: ${props => props.fontSize ? props.fontSize : "40px"};
-//   font-weight: ${props => props.fontWeight ? props.fontWeight : "700"};
-//   margin-bottom: ${props => props.marginBottom ? props.marginBottom : "50px"};
-//   text-transform: ${props => props.textDecoration && props.textDecoration}; 
-// `
 export { TopContent, MessagesBlock }
