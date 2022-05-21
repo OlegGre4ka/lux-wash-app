@@ -71,8 +71,9 @@ const HrefLink = styled.a.attrs(({href}) => ({
 `
 const FlexBox = styled.div`
   display: flex;
-  flex-direction: ${props => props.flexDirection ? props.flexDirection : ""};
-  align-items: ${props => props.alignItems ? props.alignItems : ""};
+  justify-content ${props => props.justifyContent ? props.justifyContent : null};
+  flex-direction: ${props => props.flexDirection ? props.flexDirection : null};
+  align-items: ${props => props.alignItems ? props.alignItems : null};
   width: ${props => props.width ? props.width : ""};
   padding: ${props => props.padding ? props.padding : ""};
 `
