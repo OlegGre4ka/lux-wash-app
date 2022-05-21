@@ -10,7 +10,6 @@ const BtnStyled = styled.button`
   margin-right: 40px;
   color: #e5e5e5;
   border: none;
-  // border: 4px solid ${props => props.borderColor ? props.borderColor : "linear-gradient(#2faf02 0%, #215a0c 37.5%, #144010 100%)"};
   border-radius: 90px;
   background: ${props => props.backgroundColor ? props.backgroundColor : "linear-gradient(180deg, #74f154 0%, #215a0c 37.5%, #0f2e05 100%)"}; 
   cursor: pointer;
@@ -29,6 +28,9 @@ const BtnStyled = styled.button`
   }
   &:hover{
     background: ${props => props.hoverBackgroundColor ? props.hoverBackgroundColor : "linear-gradient(180deg, #0a3300 0%, #215a0c 37.5%, #0f2e05 100%)"}; 
+  }
+  @media (max-width:480px){
+    margin-bottom: ${({marginBottomMobile}) => marginBottomMobile && marginBottomMobile}
   }
 `
 export default BtnStyled;

@@ -14,6 +14,14 @@ const Text = styled.span`
   font-weight: ${props => props.fontWeight ? props.fontWeight : "400"};
   margin-bottom: ${props => props.marginBottom ? props.marginBottom : "50px"};
   text-transform: ${props => props.textDecoration && props.textDecoration}; 
+  white-space: normal;
+
+  @media (max-width:480px){
+    font-size: ${props => props.fontSizeMobile && props.fontSizeMobile};
+    width: 307px;
+    height: ${props => props.heightMobile ? props.heightMobile : "185px"};
+    text-align: center;
+  }
 `
 const borderAnimation = keyframes`
 0% {
@@ -76,5 +84,13 @@ const FlexBox = styled.div`
   align-items: ${props => props.alignItems ? props.alignItems : null};
   width: ${props => props.width ? props.width : ""};
   padding: ${props => props.padding ? props.padding : ""};
+
+  @media (max-width:480px){
+    display: ${({displayMobile}) => displayMobile ? displayMobile : null};
+    flex-direction: ${({flexDirectionMobile}) => flexDirectionMobile ? flexDirectionMobile : null};
+    width: ${props => props.width ? props.width : ""};
+    padding: ${props => props.padding ? props.padding : ""};
+  }
+
 `
 export { AppWrapper, Text, MenuLink, HrefLink, FlexBox }

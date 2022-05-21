@@ -16,10 +16,10 @@ export default function Footer() {
                 <MenuLink to="/contacts" isBorderBottom={true} fontSize="20px" marginLeft="0px" marginBottom="30px">Контакти</MenuLink>
                 <MenuLink to="/" isBorderBottom={true} fontSize="20px" marginLeft="0px">FAQ</MenuLink>
             </FlexBox>
-            <FlexBox alignItems="center">
+            <FlexBox alignItems="center" displayMobile="none">
                 <img src={MiddleLogo} width="163" height="163" alt="FooterLogo" />
             </FlexBox>
-            <FlexBox width="386px" padding="43px 0px 0px 0px">
+            <FlexBox width="386px" padding="43px 0px 0px 0px" displayMobile="none">
                 <FlexBox flexDirection="column" width="152px">
                     <Text marginBottom="101px">Адреса:</Text>
                     <Text marginBottom="35px">Телефон:</Text>

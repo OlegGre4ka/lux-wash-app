@@ -8,5 +8,9 @@ const FooterWrapper = styled.footer`
  color: white;
  background-color: #090808;
  padding: 0px 58px;
+
+//  @media (max-width:480px){
+//     display: none;
+//   }
 `
 export { FooterWrapper }
