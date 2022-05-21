@@ -88,7 +88,7 @@ const FlexBox = styled.div`
   @media (max-width:480px){
     display: ${({displayMobile}) => displayMobile ? displayMobile : null};
     flex-direction: ${({flexDirectionMobile}) => flexDirectionMobile ? flexDirectionMobile : null};
-    width: ${props => props.width ? props.width : ""};
+    width: ${props => props.widthMobile ? props.widthMobile : ""};
     padding: ${props => props.padding ? props.padding : ""};
   }
 
