@@ -91,6 +91,9 @@ const FlexBox = styled.div`
     width: ${props => props.widthMobile ? props.widthMobile : ""};
     padding: ${props => props.padding ? props.padding : ""};
   }
-
 `
-export { AppWrapper, Text, MenuLink, HrefLink, FlexBox }
+const InputError = styled.span`
+  font-size: 16px;
+  color: red;
+`
+export { AppWrapper, Text, MenuLink, HrefLink, FlexBox, InputError }

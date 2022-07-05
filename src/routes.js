@@ -22,7 +22,6 @@ const MainRoutes = () => {
                 <Route path="/technologies" element={<Technologies />} />
                 <Route path="/services" element={<Services />} />
                 <Route path="/contacts" element={<Contacts />} />
-                {/* <Redirect to={APP_ROUTE.RESTAURANT_REGISTRATION} /> */}
             </Routes>
         </div>
     )
