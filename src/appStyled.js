@@ -7,22 +7,6 @@ const AppWrapper = styled.div`
   flex-direction: column;
   min-height: 100vh;
 `
-const Text = styled.span`
-  font-family: ${props => props.fontFamily ? props.fontFamily : 'Roboto'};
-  color: ${props => props.color ? props.color : "#E1FCB7"}; 
-  font-size: ${props => props.fontSize ? props.fontSize : "20px"};
-  font-weight: ${props => props.fontWeight ? props.fontWeight : "400"};
-  margin-bottom: ${props => props.marginBottom ? props.marginBottom : "50px"};
-  text-transform: ${props => props.textDecoration && props.textDecoration}; 
-  white-space: normal;
-
-  @media (max-width:480px){
-    font-size: ${props => props.fontSizeMobile && props.fontSizeMobile};
-    width: 307px;
-    height: ${props => props.heightMobile ? props.heightMobile : "185px"};
-    text-align: center;
-  }
-`
 const borderAnimation = keyframes`
 0% {
   color: white; 
@@ -79,17 +63,45 @@ const HrefLink = styled.a.attrs(({href}) => ({
 `
 const FlexBox = styled.div`
   display: flex;
-  justify-content ${props => props.justifyContent ? props.justifyContent : null};
-  flex-direction: ${props => props.flexDirection ? props.flexDirection : null};
-  align-items: ${props => props.alignItems ? props.alignItems : null};
-  width: ${props => props.width ? props.width : ""};
-  padding: ${props => props.padding ? props.padding : ""};
+  justify-content ${({justifyContent})=> justifyContent ? justifyContent : null};
+  flex-direction: ${({flexDirection}) => flexDirection ? flexDirection : null};
+  align-items: ${({alignItems}) => alignItems ? alignItems : null};
+  width: ${({width}) => width ? width : ""};
+  height: ${({height}) => height ? height : ""};
+  margin: ${({margin}) => margin ? margin : ""};
+  padding: ${({padding}) => padding ? padding : ""};
+  background-color: ${({backgroundColor}) => backgroundColor ? backgroundColor : ""};
+  wrap: wrap;
+  cursor:${({cursor}) => cursor ? cursor : "auto"};
+  transition: all 0.3s ease 0s;
+
+  &:hover {
+    transform: ${({hoverTransform}) => hoverTransform ? hoverTransform : null};
+  }
 
   @media (max-width:480px){
     display: ${({displayMobile}) => displayMobile ? displayMobile : null};
     flex-direction: ${({flexDirectionMobile}) => flexDirectionMobile ? flexDirectionMobile : null};
     width: ${props => props.widthMobile ? props.widthMobile : ""};
     padding: ${props => props.padding ? props.padding : ""};
+  }
+`
+const Text = styled.span`
+  display: block;
+  font-family: ${props => props.fontFamily ? props.fontFamily : 'Roboto'};
+  color: ${props => props.color ? props.color : "#E1FCB7"}; 
+  font-size: ${props => props.fontSize ? props.fontSize : "20px"};
+  font-weight: ${props => props.fontWeight ? props.fontWeight : "400"};
+  margin-bottom: ${props => props.marginBottom ? props.marginBottom : ""};
+  text-transform: ${props => props.textDecoration && props.textDecoration}; 
+  text-align: ${({textAlign}) => textAlign ? textAlign : "left"}; 
+  white-space: normal;
+
+  @media (max-width:480px){
+    font-size: ${props => props.fontSizeMobile && props.fontSizeMobile};
+    width: 307px;
+    height: ${props => props.heightMobile ? props.heightMobile : "185px"};
+    text-align: center;
   }
 `
 const InputError = styled.span`

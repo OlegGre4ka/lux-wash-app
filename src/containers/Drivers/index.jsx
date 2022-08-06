@@ -14,20 +14,20 @@ export default function Drivers() {
 
     const changeDayDateHandler = e => {
         const dayDateValue = e.target.value;
-        if (monthDate === "2" && (dayDateValue === "" || (dayDateValue >= 0 && dayDateValue <= 29))) {
+        if ((monthDate === "2" || monthDate === "02") && (dayDateValue === "" || (dayDateValue >= 0 && dayDateValue <= 29))) {
             setDayDate(dayDateValue);
             setError("");
         }
-        if (monthDate === "2" && dayDateValue > 29) {
+        if ((monthDate === "2" || monthDate === "02") && dayDateValue > 29) {
             setDayDate("");
             setError("Enter correct amount of days, please!");
         }
-        else if (["4", "6", "9", "11"].some(month => month === monthDate) && (dayDateValue === "" || (dayDateValue >= 0 && dayDateValue <= 30))) {
+        else if (["4","04","6","06","9","09","11"].some(month => month === monthDate) && (dayDateValue === "" || (dayDateValue >= 0 && dayDateValue <= 30))) {
             setDayDate(dayDateValue);
             setError("");
         }
-        else if (!["4", "6", "9", "11"].some(month => month === monthDate) && (dayDateValue === "" || (dayDateValue >= 0 && dayDateValue <= 31))) setDayDate(dayDateValue);
-        if (isLeapYear === false && dayDateValue.length !== 0 && (monthDate && monthDate === "2") && (dayDateValue && dayDateValue > 28)) {
+        else if (!["4","04","6","06","9","09","11"].some(month => month === monthDate) && (dayDateValue === "" || (dayDateValue >= 0 && dayDateValue <= 31))) setDayDate(dayDateValue);
+        if (isLeapYear === false && dayDateValue.length !== 0 && (monthDate && (monthDate === "2" || monthDate === "02")) && (dayDateValue && dayDateValue > 28)) {
             setDayDate("");
             setError("This year value is not a Leap Year! Enter correct amount of days, please!");
         }
@@ -36,8 +36,8 @@ export default function Drivers() {
     const changeMonthDateHandler = e => {
         const monthDateValue = e.target.value;
         if (monthDateValue === "" || (monthDateValue >= 0 && monthDateValue <= 12)) setMonthDate(monthDateValue);
-        if ((monthDateValue === "2" && dayDate > 29)
-            || (["4", "6", "9", "11"].some(month => month === monthDateValue) && dayDate > 30)) {
+        if (((monthDateValue === "2" || monthDateValue === "02") && dayDate > 29)
+            || (["4","04","6","06","9","09","11"].some(month => month === monthDateValue) && dayDate > 30)) {
             setDayDate("");
             setError("Enter correct amount of days, please!");
         }
@@ -56,7 +56,7 @@ export default function Drivers() {
         else if (yearDateValue.length === 4 && (yearDateValue >= currentYear - 100 || yearDateValue <= currentYear)) {
             setError("");
         }
-        if (yearDateValue.length === 4 && isDateLeapYear === false && (monthDate && monthDate === "2") && dayDate && dayDate > 28) {
+        if (yearDateValue.length === 4 && isDateLeapYear === false && (monthDate && (monthDate === "2" || monthDate === "02")) && dayDate && dayDate > 28) {
             setDayDate("");
             setError("This year value is not a Leap Year! Enter correct amount of days, please!");
         } else {
@@ -76,6 +76,7 @@ export default function Drivers() {
         setBirthDate([fullDayDate, fullMonthDate, yearDate].join("-"));
         setBirthDateMilliseconds(Date.parse([yearDate, fullMonthDate, fullDayDate].join("-")));
     }
+    console.log(monthDate, "monthDate");
     return (
         <>
             <h2>Drivers</h2>

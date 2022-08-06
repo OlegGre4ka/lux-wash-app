@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { FooterWrapper } from "./styled.js";
 import { Text, MenuLink, HrefLink, FlexBox } from "../../appStyled";
 import MiddleLogo from "./../../assets/MiddleLogo.png";
@@ -7,6 +8,8 @@ import InstagramIcon from "./../../assets/InstagramIcon.png";
 import YoutubeIcon from "./../../assets/YoutubeIcon.png";
 
 export default function Footer() {
+    let navigate = useNavigate();
+
     return (
         <FooterWrapper>
             <FlexBox flexDirection="column" width="386px" padding="43px 0px 0px 0px">
@@ -16,14 +19,14 @@ export default function Footer() {
                 <MenuLink to="/contacts" isBorderBottom={true} fontSize="20px" marginLeft="0px" marginBottom="30px">Контакти</MenuLink>
                 <MenuLink to="/" isBorderBottom={true} fontSize="20px" marginLeft="0px">FAQ</MenuLink>
             </FlexBox>
-            <FlexBox alignItems="center" displayMobile="none">
+            <FlexBox alignItems="center" displayMobile="none" onClick={()=>navigate("/")} cursor="pointer">
                 <img src={MiddleLogo} width="163" height="163" alt="FooterLogo" />
             </FlexBox>
             <FlexBox width="386px" padding="43px 0px 0px 0px" displayMobile="none">
                 <FlexBox flexDirection="column" width="152px">
                     <Text marginBottom="101px">Адреса:</Text>
                     <Text marginBottom="35px">Телефон:</Text>
-                    <Text>E-mail:</Text>
+                    <Text marginBottom="50px">E-mail:</Text>
                 </FlexBox>
                 <FlexBox flexDirection="column">
                     <Text marginBottom="50px">с. Пасіки-Зубрицькі,<br /> Львівська обл. вул.<br /> Сагайдачного, 64</Text>
