@@ -1,7 +1,10 @@
 import React from "react";
+import { TopContent } from "./../../components/sharedStyledComponents";
+import {BusinessImage, MobileBusinessImage} from "./../../assets/TopContentImages";
 
 export default function Business () {
     return (
-        <h2>Business</h2>
+        <TopContent mainImage={BusinessImage} mobileImage={MobileBusinessImage}>
+        </TopContent>
     )
 }

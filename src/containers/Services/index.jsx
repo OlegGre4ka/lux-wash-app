@@ -1,7 +1,10 @@
 import React from "react";
+import { TopContent } from "./../../components/sharedStyledComponents";
+import {ServicesImage, MobileServicesImage} from "./../../assets/TopContentImages";
 
 export default function Services () {
     return (
-        <h2>Services</h2>
+        <TopContent mainImage={ServicesImage} mobileImage={MobileServicesImage}>
+        </TopContent>
     )
 }

@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import InputNumber from "./../../components/UI/InputNumber";
 import Button from "./../../components/UI/Button";
-import { FlexBox, InputError } from "./../../appStyled";
+import { TopContent, FlexBox } from "./../../components/sharedStyledComponents";
+import { InputError } from "./../../appStyled";
+import { DriversImage, MobileDriversImage } from "./../../assets/TopContentImages";
+
 export default function Drivers() {
     const [dayDate, setDayDate] = useState("");
     const [monthDate, setMonthDate] = useState("");
@@ -22,11 +25,11 @@ export default function Drivers() {
             setDayDate("");
             setError("Enter correct amount of days, please!");
         }
-        else if (["4","04","6","06","9","09","11"].some(month => month === monthDate) && (dayDateValue === "" || (dayDateValue >= 0 && dayDateValue <= 30))) {
+        else if (["4", "04", "6", "06", "9", "09", "11"].some(month => month === monthDate) && (dayDateValue === "" || (dayDateValue >= 0 && dayDateValue <= 30))) {
             setDayDate(dayDateValue);
             setError("");
         }
-        else if (!["4","04","6","06","9","09","11"].some(month => month === monthDate) && (dayDateValue === "" || (dayDateValue >= 0 && dayDateValue <= 31))) setDayDate(dayDateValue);
+        else if (!["4", "04", "6", "06", "9", "09", "11"].some(month => month === monthDate) && (dayDateValue === "" || (dayDateValue >= 0 && dayDateValue <= 31))) setDayDate(dayDateValue);
         if (isLeapYear === false && dayDateValue.length !== 0 && (monthDate && (monthDate === "2" || monthDate === "02")) && (dayDateValue && dayDateValue > 28)) {
             setDayDate("");
             setError("This year value is not a Leap Year! Enter correct amount of days, please!");
@@ -37,7 +40,7 @@ export default function Drivers() {
         const monthDateValue = e.target.value;
         if (monthDateValue === "" || (monthDateValue >= 0 && monthDateValue <= 12)) setMonthDate(monthDateValue);
         if (((monthDateValue === "2" || monthDateValue === "02") && dayDate > 29)
-            || (["4","04","6","06","9","09","11"].some(month => month === monthDateValue) && dayDate > 30)) {
+            || (["4", "04", "6", "06", "9", "09", "11"].some(month => month === monthDateValue) && dayDate > 30)) {
             setDayDate("");
             setError("Enter correct amount of days, please!");
         }
@@ -52,7 +55,7 @@ export default function Drivers() {
             || (yearDateValue.length === 4 && (yearDateValue < currentYear - 100 || yearDateValue > currentYear))) {
             setYearDate("");
             setError(`The year value most be more than ${currentYear - 101} and less than ${currentYear + 1}! Enter correct year, please!`)
-        } 
+        }
         else if (yearDateValue.length === 4 && (yearDateValue >= currentYear - 100 || yearDateValue <= currentYear)) {
             setError("");
         }
@@ -79,7 +82,8 @@ export default function Drivers() {
     console.log(monthDate, "monthDate");
     return (
         <>
-            <h2>Drivers</h2>
+            <TopContent mainImage={DriversImage} mobileImage={MobileDriversImage}>
+            </TopContent>
             <FlexBox flexDirection="column" padding="15px 0px 0px 15px">
                 <span>Date of birth</span>
                 <FlexBox>

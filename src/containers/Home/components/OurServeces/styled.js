@@ -28,7 +28,7 @@ const ServiceGrid = styled.div`
   @media (max-width:480px){
     grid-template-columns: auto auto;
     grid-gap: 5px;
-    padding: 10px 5px 5px 10px;
+    padding: 10px 8px 10px 8px;
   }
   
 `

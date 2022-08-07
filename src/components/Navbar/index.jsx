@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
-import { NavbarWrapper, MenuLink, MenuLinksBlock, HamburgerMenu } from "./styled.js";
+import { NavbarWrapper, MenuLinksBlock, HamburgerMenu } from "./styled.js";
+import { MenuLink } from "./../sharedStyledComponents";
 import { LogoNavBar } from "./../../assets/Logos";
 import MobileMenu from "./MobileMenu";
 

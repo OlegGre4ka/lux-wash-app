@@ -1,8 +1,8 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import { BigLogo } from "./../../../assets/Logos";
-import { FlexBox } from "./../../../appStyled";
-import { MobileMenuWrapper, HamburgerMenu, MenuLink } from "./../styled";
+import { FlexBox, MenuLink } from "./../../sharedStyledComponents";
+import { MobileMenuWrapper, HamburgerMenu } from "./../styled";
 
 export default function MobileMenu({ close, isMenu }) {
     const { pathname } = useLocation();

@@ -1,12 +1,16 @@
 import React from "react";
-import { TopContent, MessagesBlock } from "./styled.js";
-import { Text, FlexBox } from "./../../appStyled";
+import { MessagesBlock } from "./styled.js";
+import { TopContent, FlexBox, Text } from "./../../components/sharedStyledComponents";
 import Button from "./../../components/UI/Button";
 import OurServices from "./components/OurServeces";
+import MainCarImage from "./../../assets/TopContentImages/MainCarImage.png";
+import MobileCarImage from "./../../assets/TopContentImages/MobileCarImage.png";
+
 export default function Home() {
     return (
         <>
-            <TopContent>
+            <TopContent mainImage={MainCarImage} mobileImage={MobileCarImage}
+                linearGradient="180deg, rgba(6,6,6,0.64) 56.36%, rgba(6,6,6,0.334414) 69.82%, rgba(6,6,6,0) 100%">
                 <MessagesBlock paddingTopMobile="68px">
                     <Text
                         fontFamily="Montserrat Alternates"
