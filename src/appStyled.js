@@ -71,7 +71,6 @@ const FlexBox = styled.div`
   margin: ${({margin}) => margin ? margin : ""};
   padding: ${({padding}) => padding ? padding : ""};
   background-color: ${({backgroundColor}) => backgroundColor ? backgroundColor : ""};
-  wrap: wrap;
   cursor:${({cursor}) => cursor ? cursor : "auto"};
   transition: all 0.3s ease 0s;
 
@@ -83,6 +82,7 @@ const FlexBox = styled.div`
     display: ${({displayMobile}) => displayMobile ? displayMobile : null};
     flex-direction: ${({flexDirectionMobile}) => flexDirectionMobile ? flexDirectionMobile : null};
     width: ${props => props.widthMobile ? props.widthMobile : ""};
+    height: ${props => props.heightMobile ? props.heightMobile : ""};
     padding: ${props => props.padding ? props.padding : ""};
   }
 `
@@ -100,7 +100,7 @@ const Text = styled.span`
   @media (max-width:480px){
     font-size: ${props => props.fontSizeMobile && props.fontSizeMobile};
     width: 307px;
-    height: ${props => props.heightMobile ? props.heightMobile : "185px"};
+    height: ${props => props.heightMobile ? props.heightMobile : ""};
     text-align: center;
   }
 `

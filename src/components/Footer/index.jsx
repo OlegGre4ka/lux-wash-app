@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { FooterWrapper } from "./styled.js";
 import { Text, MenuLink, HrefLink, FlexBox } from "../../appStyled";
-import MiddleLogo from "./../../assets/MiddleLogo.png";
+import { MiddleLogo } from "./../../assets/Logos";
 import FacebookIcon from "./../../assets/FacebookIcon.png";
 import InstagramIcon from "./../../assets/InstagramIcon.png";
 import YoutubeIcon from "./../../assets/YoutubeIcon.png";

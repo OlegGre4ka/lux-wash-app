@@ -3,6 +3,10 @@ import styled from "styled-components";
 const ServicesWrapper = styled.section`
   padding-top: 60px;
   background-color: rgba(6,6,6,85%);
+
+  @media (max-width:480px){
+    padding-top: 15px;
+  }
 `
 const CardImage = styled.img.attrs(({ image, alt }) => ({
     src:  image,
@@ -19,6 +23,12 @@ const ServiceGrid = styled.div`
   @media only screen and (max-width: 1290px) {
     padding: 45px;
     grid-gap: 20px;
+  }
+
+  @media (max-width:480px){
+    grid-template-columns: auto auto;
+    grid-gap: 5px;
+    padding: 10px 5px 5px 10px;
   }
   
 `

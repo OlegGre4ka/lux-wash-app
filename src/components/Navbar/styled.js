@@ -21,12 +21,14 @@ const borderAnimation = keyframes`
 `
 const MenuLink = styled(Link)`
  display: flex;
+ justify-content ${({justifyContent})=> justifyContent ? justifyContent : null};
+ align-items: ${({alignItems}) => alignItems ? alignItems : null};
  position: relative;
  font-family: 'Roboto';
  font-size: 20px;
  font-weight: 400;
  width: 100%;
- width: fit-content;
+ width: ${({isNotFitContent}) => isNotFitContent ? null : "fit-content"};
  color: ${props => props.isActive ? "#00b900" : "white"}; 
  border-bottom: ${props => props.isBorderBottom ? "none" : `2px solid  ${props.isActive ? "#00b900" : "transparent"}`};
  text-decoration: none;
@@ -45,7 +47,7 @@ const MenuLink = styled(Link)`
  }
  
  @media (max-width:480px){
-  margin-left: 24px;
+   margin-left: ${({marginLeft}) => marginLeft ? marginLeft : "24px"};
 }
 `
 

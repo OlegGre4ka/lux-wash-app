@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { NavbarWrapper, MenuLink, MenuLinksBlock, HamburgerMenu } from "./styled.js";
-import LogoNavBar from "./../../assets/LogoNavBar.png";
+import { LogoNavBar } from "./../../assets/Logos";
 import MobileMenu from "./MobileMenu";
 
 export default function Navbar() {
